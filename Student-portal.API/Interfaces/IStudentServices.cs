@@ -8,7 +8,7 @@ namespace Student_portal.API.Interfaces
     public interface IStudentServices
     {
         Task<StudentResponse> RegisterStudentAsync(AddStudentRequest addStudentRequest);
-        Task<StudentResponse> LoginStudentAsync(AddStudentRequest addStudentRequest, Student student);
+        Task<StudentResponse> LoginStudentAsync(LoginStudentRequest loginStudentRequest, Student student);
         Task<StudentResponse> StudentFileUploadAsync( UpdateStudentRequest updateStudentRequest, string fileName, string path);
         Task<StudentResponse> StudentUpdateAsync( Student student, UpdateStudentRequest updateStudentRequest);
         Task<StudentResponse> StudentFileDeleteAsync( Student student, [FromQuery] StudentQueryParameters queryParameters);

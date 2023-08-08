@@ -1,48 +1,116 @@
 {
   "Files": [
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\CV\\CertificateOfCompletion_Advanced Web APIs with ASP.NET Core in .NET 6_d836.pdf",
-      "PackagePath": "staticwebassets\\CV\\CertificateOfCompletion_Advanced Web APIs with ASP.NET Core in .NET 6_d836.pdf"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\CV\\Resume-Opi-barua_5c72.pdf",
+      "PackagePath": "staticwebassets\\CV\\Resume-Opi-barua_5c72.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\CV\\CertificateOfCompletion_Node.js Securing RESTful APIs_4c57.pdf",
-      "PackagePath": "staticwebassets\\CV\\CertificateOfCompletion_Node.js Securing RESTful APIs_4c57.pdf"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\CV\\Resume-Opi-barua_c9f6.pdf",
+      "PackagePath": "staticwebassets\\CV\\Resume-Opi-barua_c9f6.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\CV\\CertificateOfCompletion_Software Development Life Cycle SDLC_f523.pdf",
-      "PackagePath": "staticwebassets\\CV\\CertificateOfCompletion_Software Development Life Cycle SDLC_f523.pdf"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\CV\\Resume-Opi-barua_ccd0.pdf",
+      "PackagePath": "staticwebassets\\CV\\Resume-Opi-barua_ccd0.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_b159.pdf",
-      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_b159.pdf"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\CV\\Resume-Opi-barua_d0fc.pdf",
+      "PackagePath": "staticwebassets\\CV\\Resume-Opi-barua_d0fc.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_ea20.pdf",
-      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_ea20.pdf"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\CV\\Resume-Opi-barua_ecab.pdf",
+      "PackagePath": "staticwebassets\\CV\\Resume-Opi-barua_ecab.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\Opi_barua_CV_946b.doc",
-      "PackagePath": "staticwebassets\\Certificate\\Opi_barua_CV_946b.doc"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_3a53.pdf",
+      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_3a53.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\CertificateOfCompletion_Software Development Life Cycle SDLC_583d.pdf",
-      "PackagePath": "staticwebassets\\NoteFile\\CertificateOfCompletion_Software Development Life Cycle SDLC_583d.pdf"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_4d31.pdf",
+      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_4d31.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\CertificateOfCompletion_Software Development Life Cycle SDLC_eda5.pdf",
-      "PackagePath": "staticwebassets\\NoteFile\\CertificateOfCompletion_Software Development Life Cycle SDLC_eda5.pdf"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_6296.pdf",
+      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_6296.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\products.component_e23b.ts",
-      "PackagePath": "staticwebassets\\NoteFile\\products.component_e23b.ts"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_899c.pdf",
+      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_899c.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\CertificateOfCompletion_C Essential Training 2 Generics Collections and LINQ_98a3.pdf",
-      "PackagePath": "staticwebassets\\VoterId\\CertificateOfCompletion_C Essential Training 2 Generics Collections and LINQ_98a3.pdf"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_b38a.pdf",
+      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_b38a.pdf"
     },
     {
-      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\IMG_20221231_161156_eee7.jpg",
-      "PackagePath": "staticwebassets\\VoterId\\IMG_20221231_161156_eee7.jpg"
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_d06c.pdf",
+      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_d06c.pdf"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_f5e5.pdf",
+      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_f5e5.pdf"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_fd40.pdf",
+      "PackagePath": "staticwebassets\\Certificate\\CertificateOfCompletion_Software Development Life Cycle SDLC_fd40.pdf"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Image\\opi_barua-large_966c.jpg",
+      "PackagePath": "staticwebassets\\Image\\opi_barua-large_966c.jpg"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\Image\\opi_barua_7f0b.jpg",
+      "PackagePath": "staticwebassets\\Image\\opi_barua_7f0b.jpg"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\New Text Document_2f95.txt",
+      "PackagePath": "staticwebassets\\NoteFile\\New Text Document_2f95.txt"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\New Text Document_7600.txt",
+      "PackagePath": "staticwebassets\\NoteFile\\New Text Document_7600.txt"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\New Text Document_b460.txt",
+      "PackagePath": "staticwebassets\\NoteFile\\New Text Document_b460.txt"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\New Text Document_be71.txt",
+      "PackagePath": "staticwebassets\\NoteFile\\New Text Document_be71.txt"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\New Text Document_c71c.txt",
+      "PackagePath": "staticwebassets\\NoteFile\\New Text Document_c71c.txt"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\NoteFile\\New Text Document_d16f.txt",
+      "PackagePath": "staticwebassets\\NoteFile\\New Text Document_d16f.txt"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\CertificateOfCompletion_Software Development Life Cycle SDLC_478e.pdf",
+      "PackagePath": "staticwebassets\\VoterId\\CertificateOfCompletion_Software Development Life Cycle SDLC_478e.pdf"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\IMG_20221231_161156_0856.jpg",
+      "PackagePath": "staticwebassets\\VoterId\\IMG_20221231_161156_0856.jpg"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\IMG_20221231_161156_1e5e.jpg",
+      "PackagePath": "staticwebassets\\VoterId\\IMG_20221231_161156_1e5e.jpg"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\IMG_20221231_161156_3459.jpg",
+      "PackagePath": "staticwebassets\\VoterId\\IMG_20221231_161156_3459.jpg"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\IMG_20221231_161156_8440.jpg",
+      "PackagePath": "staticwebassets\\VoterId\\IMG_20221231_161156_8440.jpg"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\IMG_20221231_161156_a24d.jpg",
+      "PackagePath": "staticwebassets\\VoterId\\IMG_20221231_161156_a24d.jpg"
+    },
+    {
+      "Id": "H:\\ASP.Net\\Student-portal\\Student-portal.API\\Student-portal.API\\wwwroot\\VoterId\\IMG_20221231_161156_a634.jpg",
+      "PackagePath": "staticwebassets\\VoterId\\IMG_20221231_161156_a634.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.Student-portal.API.Microsoft.AspNetCore.StaticWebAssets.props",

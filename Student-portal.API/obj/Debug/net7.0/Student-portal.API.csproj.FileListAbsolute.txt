@@ -9,7 +9,6 @@ H:\ASP.Net\Student-portal\Student-portal.API\Student-portal.API\bin\Debug\net7.0
 H:\ASP.Net\Student-portal\Student-portal.API\Student-portal.API\bin\Debug\net7.0\Azure.Identity.dll
 H:\ASP.Net\Student-portal\Student-portal.API\Student-portal.API\bin\Debug\net7.0\Humanizer.dll
 H:\ASP.Net\Student-portal\Student-portal.API\Student-portal.API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
-H:\ASP.Net\Student-portal\Student-portal.API\Student-portal.API\bin\Debug\net7.0\Microsoft.AspNetCore.OpenApi.dll
 H:\ASP.Net\Student-portal\Student-portal.API\Student-portal.API\bin\Debug\net7.0\Microsoft.Bcl.AsyncInterfaces.dll
 H:\ASP.Net\Student-portal\Student-portal.API\Student-portal.API\bin\Debug\net7.0\Microsoft.Data.SqlClient.dll
 H:\ASP.Net\Student-portal\Student-portal.API\Student-portal.API\bin\Debug\net7.0\Microsoft.EntityFrameworkCore.dll

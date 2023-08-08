@@ -12,8 +12,8 @@ using Student_portal.API.Data;
 namespace Student_portal.API.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20230805062225_initial")]
-    partial class initial
+    [Migration("20230808035725_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,7 +31,16 @@ namespace Student_portal.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("About")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Age")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CertificatePath")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Class")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Contact")
@@ -40,12 +49,21 @@ namespace Student_portal.API.Migrations
                     b.Property<string>("CvPath")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("District")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstName")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Group")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImagePath")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("LastName")

@@ -34,7 +34,7 @@ namespace Student_portal.API.Services
             {
                 return new StudentResponse { Success = true, Student = student };
             }
-            return new StudentResponse { Success = false, Message = "Didn't find student in this Id" };
+            return new StudentResponse { Success = false, Message = "Didn't find student in this Id", Response = "false" };
         }
         public async Task<StudentResponse> GetStudentByEmailAsync(string email)
         {
@@ -43,7 +43,7 @@ namespace Student_portal.API.Services
             {
                 return new StudentResponse { Success = true, Student = student };
             }
-            return new StudentResponse { Success = false };
+            return new StudentResponse { Success = false, Message = "this email didn't find!", Response = "false" };
         }
 
         public async Task<StudentResponse> RegisterStudentAsync(AddStudentRequest addStudentRequest)
@@ -62,7 +62,7 @@ namespace Student_portal.API.Services
             await _context.Students.AddAsync(newStudent);
             await _context.SaveChangesAsync();
 
-            return new StudentResponse { Success = true, Student = newStudent };
+            return new StudentResponse { Success = true, Message = "Registration successfull! Please Login." };
         }
         private void CreatePasswordHash(string password, out byte[] passwordHash, out byte[] passwordSalt)
         {
@@ -73,15 +73,15 @@ namespace Student_portal.API.Services
             }
         }
 
-        public async Task<StudentResponse> LoginStudentAsync(AddStudentRequest addStudentRequest, Student student)
+        public async Task<StudentResponse> LoginStudentAsync(LoginStudentRequest loginStudentRequest, Student student)
         {
-            if (!VerifyPasswordHash(addStudentRequest.Password, student.PasswordHash, student.PasswordSalt))
+            if (!VerifyPasswordHash(loginStudentRequest.Password, student.PasswordHash, student.PasswordSalt))
             {
-                return new StudentResponse {Success= false, Message = "Wrong password!" };
+                return new StudentResponse {Success= false, Message = "Wrong password!", Response = "false" };
             }
 
             var token = GenerateToken();
-            return new StudentResponse { Success= true, Id = student.Id , Token = token, FirstName = student.FirstName, LastName = student.LastName, Email = student.Email };
+            return new StudentResponse { Success= true, Response = "true", Id = student.Id , Token = token, FirstName = student.FirstName, LastName = student.LastName, Email = student.Email };
         }
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
         {
@@ -118,6 +118,13 @@ namespace Student_portal.API.Services
 
                 var newFilePath = Path.Combine(path, uniqueFileName);
                 updateStudentRequest.CvPath = newFilePath;
+                return new StudentResponse { Success = true };
+            }
+            else if (path == "Image")
+            {
+                await updateStudentRequest.Image.CopyToAsync(new FileStream(filePath, FileMode.Create));
+                var newFilePath = Path.Combine(path, uniqueFileName);
+                updateStudentRequest.ImagePath = newFilePath;
                 return new StudentResponse { Success = true };
             }
             else if(path == "NoteFile")
@@ -160,7 +167,13 @@ namespace Student_portal.API.Services
             student.LastName = updateStudentRequest.LastName;
             student.Email = updateStudentRequest.Email;
             student.Contact = updateStudentRequest.Contact;
+            student.Class = updateStudentRequest.Class;
+            student.Age = updateStudentRequest.Age;
+            student.About = updateStudentRequest.About;
+            student.Group = updateStudentRequest.Group;
+            student.District = updateStudentRequest.District;
             student.CvPath = updateStudentRequest.CvPath;
+            student.ImagePath = updateStudentRequest.ImagePath;
             student.NoteFilePath = updateStudentRequest.NoteFilePath;
             student.CertificatePath = updateStudentRequest.CertificatePath;
             student.VoterIdPath = updateStudentRequest.VoterIdPath;
@@ -168,7 +181,7 @@ namespace Student_portal.API.Services
             student.NoteFilePath = updateStudentRequest.NoteFilePath;
             student.NoteFilePath = updateStudentRequest.NoteFilePath;
             await _context.SaveChangesAsync();
-            return new StudentResponse { Success = true, Student = student };
+            return new StudentResponse { Success = true, Message = "Student info update successfully", Response = "true" };
         }
 
         public async Task<StudentResponse> StudentFileDeleteAsync(Student student, [FromQuery] StudentQueryParameters queryParameters)
@@ -177,41 +190,51 @@ namespace Student_portal.API.Services
             {
                 if (string.IsNullOrWhiteSpace(student.CvPath))
                 {
-                    return new StudentResponse { Success = false, Message = "your CV already null" };
+                    return new StudentResponse { Success = false, Message = "Your CV already null", Response = "false" };
                 }
                 student.CvPath = null;
                 await _context.SaveChangesAsync();
-                return new StudentResponse { Success = true, Message = "Your CV Deleted SuccessFully" };
+                return new StudentResponse { Success = true, Message = "Your CV Deleted SuccessFully", Response = "true" };
+            }
+            else if (queryParameters.DeleteFileName.ToLower() == "image")
+            {
+                if (string.IsNullOrWhiteSpace(student.ImagePath))
+                {
+                    return new StudentResponse { Success = false, Message = "Your NoteFile already null", Response = "false" };
+                }
+                student.ImagePath = null;
+                await _context.SaveChangesAsync();
+                return new StudentResponse { Success = true, Message = "Your image Deleted SuccessFully", Response = "true" };
             }
             else if (queryParameters.DeleteFileName.ToLower() == "notefile")
             {
                 if (string.IsNullOrWhiteSpace(student.NoteFilePath))
                 {
-                    return new StudentResponse { Success = false, Message = "your NoteFile already null" };
+                    return new StudentResponse { Success = false, Message = "Your NoteFile already null", Response = "false" };
                 }
                 student.NoteFilePath = null;
                 await _context.SaveChangesAsync();
-                return new StudentResponse { Success = true, Message = "Your note file Deleted SuccessFully" };
+                return new StudentResponse { Success = true, Message = "Your note file Deleted SuccessFully", Response = "true" };
             }
             else if (queryParameters.DeleteFileName.ToLower() == "voterid")
             {
                 if (string.IsNullOrWhiteSpace(student.VoterIdPath))
                 {
-                    return new StudentResponse { Success = false, Message = "your VoterId already null" };
+                    return new StudentResponse { Success = false, Message = "Your VoterId already null", Response = "false" };
                 }
                 student.VoterIdPath = null;
                 await _context.SaveChangesAsync();
-                return new StudentResponse { Success = true, Message = "Your voterId Deleted SuccessFully" };
+                return new StudentResponse { Success = true, Message = "Your voterId Deleted SuccessFully", Response = "true" };
             }
             else if (queryParameters.DeleteFileName.ToLower() == "certificate")
             {
                 if (string.IsNullOrWhiteSpace(student.CertificatePath))
                 {
-                    return new StudentResponse { Success = false, Message = "your Certificate already null" };
+                    return new StudentResponse { Success = false, Message = "Your Certificate already null", Response = "false" };
                 }
                 student.CertificatePath = null;
                 await _context.SaveChangesAsync();
-                return new StudentResponse { Success = true, Message = "Your certificate Deleted SuccessFully" };
+                return new StudentResponse { Success = true, Message = "Your certificate Deleted SuccessFully", Response = "true" };
             }
             else if (queryParameters.DeleteFileName.ToLower() == "all")
             {
@@ -221,23 +244,23 @@ namespace Student_portal.API.Services
                     string.IsNullOrWhiteSpace(student.CvPath)
                     )
                 {
-                    return new StudentResponse { Success = false, Message = "your All file already null" };
+                    return new StudentResponse { Success = false, Message = "Your All file already null", Response = "false" };
                 }
                 student.CertificatePath = null;
                 student.VoterIdPath = null;
                 student.NoteFilePath = null;
                 student.CvPath = null;
                 await _context.SaveChangesAsync();
-                return new StudentResponse { Success = true, Message = "Your All file Deleted SuccessFully" };
+                return new StudentResponse { Success = true, Message = "Your All file Deleted SuccessFully", Response = "true" };
             }
-            return new StudentResponse { Success = false, Message = "Something went wrong" };
+            return new StudentResponse { Success = false, Message = "Your filename didn't match", Response = "false" };
         }
 
         public async Task<StudentResponse> DeleteAccountAsync(Guid id, Student student)
         {
             _context.Students.Remove(student);
             await _context.SaveChangesAsync();
-            return new StudentResponse { Success = true, Message = "Account deleted Successfull" };
+            return new StudentResponse { Success = true, Message = "Account deleted Successfull", Response = "true" };
         }
     }
 }

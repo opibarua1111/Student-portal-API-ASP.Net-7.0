@@ -15,5 +15,7 @@ namespace Student_portal.API.Responses
         public string LastName { get; set; }
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
         public string Email { get; set; }
+        [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        public string Response { get; set; }
     }
 }

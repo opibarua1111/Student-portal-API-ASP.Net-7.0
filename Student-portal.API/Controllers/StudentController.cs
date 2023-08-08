@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -43,18 +44,18 @@ namespace Student_portal.API.Controllers
             }
         }
         [HttpPost("login")]
-        public async Task<ActionResult> Login(AddStudentRequest addStudentRequest)
+        public async Task<ActionResult> Login(LoginStudentRequest loginStudentRequest)
         {
             try
             {
-                var studentEmailResponse = await _studentService.GetStudentByEmailAsync(addStudentRequest.Email);
+                var studentEmailResponse = await _studentService.GetStudentByEmailAsync(loginStudentRequest.Email);
 
                 if (studentEmailResponse.Success)
                 {
-                    var studentResponse = await _studentService.LoginStudentAsync(addStudentRequest, studentEmailResponse.Student);
+                    var studentResponse = await _studentService.LoginStudentAsync(loginStudentRequest, studentEmailResponse.Student);
                     if (!studentResponse.Success)
                     {
-                        return BadRequest(studentResponse.Message);
+                        return Ok(studentResponse);
                     }
                     if (studentResponse.Success)
                     {
@@ -62,16 +63,16 @@ namespace Student_portal.API.Controllers
                     }
                     return BadRequest("Something went wrong!");
                 }
-                return Ok("this email didn't find!");
+                return Ok(studentEmailResponse);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpGet]
         [Route("{id:guid}")]
-        [Authorize]
         public async Task<ActionResult> GetStudent([FromRoute] Guid id)
         {
             try
@@ -88,9 +89,9 @@ namespace Student_portal.API.Controllers
                 return BadRequest(ex.Message);
             }
         }
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpPut]
         [Route("{id:guid}")]
-        [Authorize]
         public async Task<ActionResult> UpdateStudent([FromRoute] Guid id, [FromForm] UpdateStudentRequest updateStudentRequest)
         {
             try
@@ -99,7 +100,11 @@ namespace Student_portal.API.Controllers
 
                 if (studentIdResponse.Success)
                 {
-                    if(updateStudentRequest.Cv != null)
+                    if (updateStudentRequest.Image != null)
+                    {
+                        var studentFileResponse = await _studentService.StudentFileUploadAsync(updateStudentRequest, updateStudentRequest.Image.FileName, "Image");
+                    }
+                    if (updateStudentRequest.Cv != null)
                     {
                         var studentFileResponse = await _studentService.StudentFileUploadAsync(updateStudentRequest, updateStudentRequest.Cv.FileName, "CV");
                     }
@@ -118,11 +123,11 @@ namespace Student_portal.API.Controllers
                     var studentResponse = await _studentService.StudentUpdateAsync(studentIdResponse.Student, updateStudentRequest);
                     if (studentResponse.Success)
                     {
-                        return Ok(studentResponse.Student);
+                        return Ok(studentResponse);
                     }
-                    return BadRequest("Something went wrong!");
+                    return Ok(new { message = "Something went wrong!", response = "false", });
                 }
-                return Ok("This student id didn't find!");
+                return Ok(studentIdResponse);
             }
             catch (Exception ex)
             {
@@ -130,9 +135,9 @@ namespace Student_portal.API.Controllers
             }
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpDelete]
         [Route("DeleteFile/{id:guid}")]
-        [Authorize]
         public async Task<ActionResult> DeleteFile([FromRoute] Guid id, [FromQuery] StudentQueryParameters queryParameters) 
         {
             try
@@ -145,16 +150,16 @@ namespace Student_portal.API.Controllers
                         var studentResponse = await _studentService.StudentFileDeleteAsync(studentIdResponse.Student, queryParameters);
                         if (studentResponse.Success)
                         {
-                            return Ok(studentResponse.Message);
+                            return Ok(studentResponse);
                         }
                         else
                         {
-                            return Ok(studentResponse.Message);
+                            return Ok(studentResponse);
                         }
                     }
-                    return Ok("Please provide delete file name");
+                    return Ok(new { message = "Please provide delete file name", response = "false", });
                 }
-                return Ok("This student id didn't find!");
+                return Ok(studentIdResponse);
             }
             catch (Exception ex)
             {
@@ -162,9 +167,9 @@ namespace Student_portal.API.Controllers
             }
         }
 
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
         [HttpDelete]
         [Route("DeleteAccount/{id:guid}")]
-        [Authorize]
         public async Task<ActionResult> DeleteAccount([FromRoute] Guid id)
         {
             try
@@ -175,11 +180,11 @@ namespace Student_portal.API.Controllers
                     var studentResponse = await _studentService.DeleteAccountAsync(id, studentIdResponse.Student);
                     if (studentResponse.Success)
                     {
-                        return Ok(studentResponse.Message);
+                        return Ok(studentResponse);
                     }
-                    return BadRequest("Something went wrong");
+                    return Ok(new { message = "Something went wrong", response = "false", });
                 }
-                return BadRequest(studentIdResponse.Message);
+                return Ok(studentIdResponse);
             }
             catch (Exception ex)
             {
